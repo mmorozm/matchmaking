@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{60422BA5-51AA-4043-B2CA-9218E5F5CD3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Hosts.WebApi", "src\Hosts\Matchmaking.Hosts.WebApi\Matchmaking.Hosts.WebApi.csproj", "{D49454EA-5DEE-47B0-B4DE-D5E11A06068D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CBB07161-6FED-471A-B9CD-F855944629A8}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{9AF7A534-6402-42B1-B97D-154980317286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Models.Domain", "src\Models\Matchmaking.Models.Domain\Matchmaking.Models.Domain.csproj", "{DFB7B1D6-23F9-47FB-A5D6-1F75EB5C66A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{57B87C2A-1536-4FB9-B364-5E41EF795EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Migrations.Data", "src\Migrations\Matchmaking.Migrations.Data\Matchmaking.Migrations.Data.csproj", "{632EC939-6C8F-486A-8C3F-3B4A5504ABC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Models.Services", "src\Models\Matchmaking.Models.Services\Matchmaking.Models.Services.csproj", "{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D49454EA-5DEE-47B0-B4DE-D5E11A06068D} = {60422BA5-51AA-4043-B2CA-9218E5F5CD3F}
+		{DFB7B1D6-23F9-47FB-A5D6-1F75EB5C66A5} = {9AF7A534-6402-42B1-B97D-154980317286}
+		{632EC939-6C8F-486A-8C3F-3B4A5504ABC3} = {57B87C2A-1536-4FB9-B364-5E41EF795EBB}
+		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42} = {9AF7A534-6402-42B1-B97D-154980317286}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D49454EA-5DEE-47B0-B4DE-D5E11A06068D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49454EA-5DEE-47B0-B4DE-D5E11A06068D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49454EA-5DEE-47B0-B4DE-D5E11A06068D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49454EA-5DEE-47B0-B4DE-D5E11A06068D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB7B1D6-23F9-47FB-A5D6-1F75EB5C66A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB7B1D6-23F9-47FB-A5D6-1F75EB5C66A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB7B1D6-23F9-47FB-A5D6-1F75EB5C66A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB7B1D6-23F9-47FB-A5D6-1F75EB5C66A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{632EC939-6C8F-486A-8C3F-3B4A5504ABC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{632EC939-6C8F-486A-8C3F-3B4A5504ABC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{632EC939-6C8F-486A-8C3F-3B4A5504ABC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{632EC939-6C8F-486A-8C3F-3B4A5504ABC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
