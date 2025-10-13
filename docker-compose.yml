@@ -1,0 +1,6 @@
+﻿services:
+  matchmaking.hosts.webapi:
+    image: matchmaking.hosts.webapi
+    build:
+      context: .
+      dockerfile: src/Hosts/Matchmaking.Hosts.WebApi/Dockerfile
