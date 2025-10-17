@@ -6,5 +6,8 @@ namespace Matchmaking.Hosts.WebApi.Controllers;
 [Route("api/[controller]")]
 public class ClientController : ControllerBase
 {
-
+    public ClientController()
+    {
+        
+    }
 }

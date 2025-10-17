@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Matchmaking.Models.Domain.Enum;
 
 namespace Matchmaking.Models.Domain;
 

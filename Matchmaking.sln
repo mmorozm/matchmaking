@@ -19,6 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Migrations.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Models.Services", "src\Models\Matchmaking.Models.Services\Matchmaking.Models.Services.csproj", "{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{34CD15A5-3A50-41C2-83C0-81F543B63DFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Shared.ProviderSDK", "src\Shared\Matchmaking.Shared.ProviderSDK\Matchmaking.Shared.ProviderSDK.csproj", "{67920496-0407-43F6-8E50-35522177622F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{59B63790-6D5F-4350-9116-7416328D0C17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Tests.Services", "src\Tests\Matchmaking.Tests.Services\Matchmaking.Tests.Services.csproj", "{BD2C3FDE-363F-445E-A7DC-CC303E7134EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +37,8 @@ Global
 		{DFB7B1D6-23F9-47FB-A5D6-1F75EB5C66A5} = {9AF7A534-6402-42B1-B97D-154980317286}
 		{632EC939-6C8F-486A-8C3F-3B4A5504ABC3} = {57B87C2A-1536-4FB9-B364-5E41EF795EBB}
 		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42} = {9AF7A534-6402-42B1-B97D-154980317286}
+		{67920496-0407-43F6-8E50-35522177622F} = {34CD15A5-3A50-41C2-83C0-81F543B63DFD}
+		{BD2C3FDE-363F-445E-A7DC-CC303E7134EC} = {59B63790-6D5F-4350-9116-7416328D0C17}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D49454EA-5DEE-47B0-B4DE-D5E11A06068D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -47,5 +57,13 @@ Global
 		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EBB5AB6-B4C0-46C8-A1C1-D19742604F42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67920496-0407-43F6-8E50-35522177622F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67920496-0407-43F6-8E50-35522177622F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67920496-0407-43F6-8E50-35522177622F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67920496-0407-43F6-8E50-35522177622F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD2C3FDE-363F-445E-A7DC-CC303E7134EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2C3FDE-363F-445E-A7DC-CC303E7134EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2C3FDE-363F-445E-A7DC-CC303E7134EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2C3FDE-363F-445E-A7DC-CC303E7134EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

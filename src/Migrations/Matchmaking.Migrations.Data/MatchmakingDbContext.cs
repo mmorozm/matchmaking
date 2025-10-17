@@ -39,8 +39,12 @@ public class MatchmakingDbContext : DbContext
             .HasKey(x => x.Id);
         
         modelBuilder.Entity<Playlist>()
-            .Property(x => x.PLaylistType)
+            .Property(x => x.PlaylistType)
             .IsRequired();
+
+        modelBuilder.Entity<Playlist>()
+            .Property(x => x.Score)
+            .HasDefaultValue(0);
         
         modelBuilder.Entity<Playlist>()
             .HasMany(p => p.Scenarios)

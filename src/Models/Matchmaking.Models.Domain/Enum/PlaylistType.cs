@@ -1,4 +1,4 @@
-﻿namespace Matchmaking.Models.Domain;
+﻿namespace Matchmaking.Models.Domain.Enum;
 
 public enum PlaylistType
 {
