@@ -1,6 +1,6 @@
 ﻿namespace Matchmaking.Models.Services.Requests;
 
-public class CreateTicketRequest
+public class FindMatchRequest
 {
     
 }
