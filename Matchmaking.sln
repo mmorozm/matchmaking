@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Tests.Services"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Shared", "src\Shared\Matchmaking.Shared\Matchmaking.Shared.csproj", "{D1C05F15-0C47-432E-B74F-9E83E7ADA46F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matchmaking.Hosts.Worker", "src\Hosts\Matchmaking.Hosts.Worker\Matchmaking.Hosts.Worker.csproj", "{A50BF1C6-8995-4FFE-8226-E5F3838E6AD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,7 @@ Global
 		{67920496-0407-43F6-8E50-35522177622F} = {34CD15A5-3A50-41C2-83C0-81F543B63DFD}
 		{BD2C3FDE-363F-445E-A7DC-CC303E7134EC} = {59B63790-6D5F-4350-9116-7416328D0C17}
 		{D1C05F15-0C47-432E-B74F-9E83E7ADA46F} = {34CD15A5-3A50-41C2-83C0-81F543B63DFD}
+		{A50BF1C6-8995-4FFE-8226-E5F3838E6AD0} = {60422BA5-51AA-4043-B2CA-9218E5F5CD3F}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D49454EA-5DEE-47B0-B4DE-D5E11A06068D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +75,9 @@ Global
 		{D1C05F15-0C47-432E-B74F-9E83E7ADA46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1C05F15-0C47-432E-B74F-9E83E7ADA46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1C05F15-0C47-432E-B74F-9E83E7ADA46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A50BF1C6-8995-4FFE-8226-E5F3838E6AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50BF1C6-8995-4FFE-8226-E5F3838E6AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50BF1C6-8995-4FFE-8226-E5F3838E6AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50BF1C6-8995-4FFE-8226-E5F3838E6AD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

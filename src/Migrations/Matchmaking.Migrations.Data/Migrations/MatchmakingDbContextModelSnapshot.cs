@@ -31,7 +31,16 @@ namespace Matchmaking.Migrations.Data.Migrations
                     b.Property<int>("PlatformId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("PlaylistId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("Region")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ScenarioId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("State")
                         .HasColumnType("integer");
 
                     b.Property<int>("SupportedInputs")
@@ -41,7 +50,48 @@ namespace Matchmaking.Migrations.Data.Migrations
 
                     b.HasIndex("PlatformId");
 
+                    b.HasIndex("PlaylistId");
+
+                    b.HasIndex("ScenarioId");
+
                     b.ToTable("Matches");
+                });
+
+            modelBuilder.Entity("Matchmaking.Models.Domain.MatchReservation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("MatchId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("Present")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("PresentChanged")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("Registered")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("RegisteredChanged")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("TeamId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("TicketId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MatchId");
+
+                    b.HasIndex("TicketId")
+                        .IsUnique();
+
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("Matchmaking.Models.Domain.PlatformGroup", b =>
@@ -73,8 +123,13 @@ namespace Matchmaking.Migrations.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("PLaylistType")
+                    b.Property<int>("PlaylistType")
                         .HasColumnType("integer");
+
+                    b.Property<int>("Score")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(0);
 
                     b.HasKey("Id");
 
@@ -154,7 +209,42 @@ namespace Matchmaking.Migrations.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Matchmaking.Models.Domain.Playlist", "Playlist")
+                        .WithMany()
+                        .HasForeignKey("PlaylistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Matchmaking.Models.Domain.Scenario", "Scenario")
+                        .WithMany()
+                        .HasForeignKey("ScenarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Platform");
+
+                    b.Navigation("Playlist");
+
+                    b.Navigation("Scenario");
+                });
+
+            modelBuilder.Entity("Matchmaking.Models.Domain.MatchReservation", b =>
+                {
+                    b.HasOne("Matchmaking.Models.Domain.Match", "Match")
+                        .WithMany("Reservations")
+                        .HasForeignKey("MatchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Matchmaking.Models.Domain.Ticket", "Ticket")
+                        .WithOne("Reservation")
+                        .HasForeignKey("Matchmaking.Models.Domain.MatchReservation", "TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Match");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("Matchmaking.Models.Domain.Scenario", b =>
@@ -177,6 +267,11 @@ namespace Matchmaking.Migrations.Data.Migrations
                     b.Navigation("LateJoinTicket");
                 });
 
+            modelBuilder.Entity("Matchmaking.Models.Domain.Match", b =>
+                {
+                    b.Navigation("Reservations");
+                });
+
             modelBuilder.Entity("Matchmaking.Models.Domain.Playlist", b =>
                 {
                     b.Navigation("Scenarios");
@@ -185,6 +280,9 @@ namespace Matchmaking.Migrations.Data.Migrations
             modelBuilder.Entity("Matchmaking.Models.Domain.Ticket", b =>
                 {
                     b.Navigation("ChildTickets");
+
+                    b.Navigation("Reservation")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

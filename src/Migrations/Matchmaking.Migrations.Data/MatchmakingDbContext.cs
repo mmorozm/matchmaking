@@ -17,6 +17,8 @@ public class MatchmakingDbContext : DbContext
     
     public DbSet<Match> Matches { get; set; }
 
+    public DbSet<MatchReservation> Reservations { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         SetupPlatformGroupTable(modelBuilder);
@@ -26,8 +28,26 @@ public class MatchmakingDbContext : DbContext
         SetupMatchTable(modelBuilder);
 
         SetupPlaylistsAndScenarios(modelBuilder);
+        
+        SetupMatchReservations(modelBuilder);
 
         base.OnModelCreating(modelBuilder);
+    }
+
+    private static void SetupMatchReservations(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<MatchReservation>()
+            .HasKey(x => x.Id);
+        
+        modelBuilder.Entity<MatchReservation>()
+            .HasOne(r => r.Ticket)
+            .WithOne(t => t.Reservation)
+            .HasForeignKey<MatchReservation>(r => r.TicketId);
+        
+        modelBuilder.Entity<MatchReservation>()
+            .HasOne(r => r.Match)
+            .WithMany(m => m.Reservations)
+            .HasForeignKey(r => r.MatchId);
     }
 
     private void SetupPlaylistsAndScenarios(ModelBuilder modelBuilder)
@@ -80,6 +100,16 @@ public class MatchmakingDbContext : DbContext
             .WithMany()
             .HasForeignKey(m => m.PlatformId)
             .IsRequired();
+
+        modelBuilder.Entity<Match>()
+            .HasOne(m => m.Playlist)
+            .WithMany()
+            .HasForeignKey(m => m.PlaylistId);
+        
+        modelBuilder.Entity<Match>()
+            .HasOne(m => m.Scenario)
+            .WithMany()
+            .HasForeignKey(m => m.ScenarioId);
     }
 
     private void SetupTicketTable(ModelBuilder modelBuilder)

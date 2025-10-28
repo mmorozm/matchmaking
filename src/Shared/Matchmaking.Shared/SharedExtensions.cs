@@ -23,6 +23,8 @@ public static class SharedExtensions
             services.AddTransient(implementedInterface, type);
         }
 
+        services.AddScoped<IMapperFactory, MapperFactory>();
+
         return services;
     }
 

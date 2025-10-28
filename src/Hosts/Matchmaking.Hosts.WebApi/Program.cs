@@ -23,7 +23,6 @@ using (var scope = app.Services.CreateScope())
 {
     //replace DataContext with your Db Context name
     var dataContext = scope.ServiceProvider.GetRequiredService<MatchmakingDbContext>();
-    dataContext.Database.EnsureCreated();
     dataContext.Database.Migrate();
 }
 

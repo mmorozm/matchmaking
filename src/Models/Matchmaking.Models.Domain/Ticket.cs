@@ -27,5 +27,7 @@ public class Ticket
 
     public Ticket? LateJoinTicket { get; set; }
 
+    public MatchReservation Reservation { get; set; }
+
     public ICollection<Ticket>? ChildTickets { get; set; }
 }

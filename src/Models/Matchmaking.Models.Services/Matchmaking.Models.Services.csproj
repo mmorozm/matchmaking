@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Migrations\Matchmaking.Migrations.Data\Matchmaking.Migrations.Data.csproj" />
+      <ProjectReference Include="..\Matchmaking.Models.Domain\Matchmaking.Models.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

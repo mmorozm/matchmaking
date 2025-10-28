@@ -4,3 +4,9 @@
     build:
       context: .
       dockerfile: src/Hosts/Matchmaking.Hosts.WebApi/Dockerfile
+  matchmaking.hosts.worker:
+    image: matchmaking.hosts.worker
+    build:
+      context: .
+      dockerfile: src/Hosts/Matchmaking.Hosts.Worker/Dockerfile
+
