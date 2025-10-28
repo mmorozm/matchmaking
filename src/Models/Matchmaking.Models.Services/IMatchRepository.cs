@@ -1,4 +1,5 @@
 ﻿using Matchmaking.Models.Domain;
+using Matchmaking.Models.Domain.Enum;
 
 namespace Matchmaking.Models.Services;
 
@@ -14,4 +15,5 @@ public interface IMatchRepository
     // Query helpers (adjust as needed)
     IQueryable<Match> GetByScenarioId(int scenarioId);
     IQueryable<Match> GetByPlaylistId(int playlistId);
+    IQueryable<Match> GetByState(MatchState matchState);
 }

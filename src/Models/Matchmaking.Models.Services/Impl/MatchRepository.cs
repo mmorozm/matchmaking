@@ -1,5 +1,6 @@
 ﻿using Matchmaking.Migrations.Data;
 using Matchmaking.Models.Domain;
+using Matchmaking.Models.Domain.Enum;
 using Microsoft.EntityFrameworkCore;
 
 namespace Matchmaking.Models.Services.Impl;
@@ -61,5 +62,10 @@ public class MatchRepository : IMatchRepository
     public IQueryable<Match> GetByPlaylistId(int playlistId)
     {
         return _context.Matches.Where(e => e.PlaylistId == playlistId);
+    }
+
+    public IQueryable<Match> GetByState(MatchState matchState)
+    {
+        return _context.Matches.Where(e => e.State == matchState);   
     }
 }
