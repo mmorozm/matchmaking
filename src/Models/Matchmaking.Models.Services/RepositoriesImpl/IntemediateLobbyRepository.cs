@@ -2,7 +2,7 @@
 using Matchmaking.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Matchmaking.Models.Services.Impl;
+namespace Matchmaking.Models.Services.RepositoriesImpl;
 
 public class IntemediateLobbyRepository : IIntermediateLobbyRepository
 {

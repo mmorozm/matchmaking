@@ -3,7 +3,7 @@ using Matchmaking.Models.Domain;
 using Matchmaking.Models.Domain.Enum;
 using Microsoft.EntityFrameworkCore;
 
-namespace Matchmaking.Models.Services.Impl;
+namespace Matchmaking.Models.Services.RepositoriesImpl;
 
 public class TicketRepository : ITicketRepository
 {
