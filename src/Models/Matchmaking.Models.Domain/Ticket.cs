@@ -9,6 +9,8 @@ public class Ticket
 
     public string PlayerId { get; set; }
 
+    public uint ClientVersion { get; set; }
+
     public ICollection<string> Party { get; set; }
 
     public ICollection<Region> Regions { get; set; }
@@ -22,6 +24,10 @@ public class Ticket
     public TicketState State { get; set; }
 
     public int Size { get; set; }
+
+    public Guid? IntermediateLobbyId { get; set; }
+
+    public IntermediateLobby? IntermediateLobby { get; set; }
     
     public Guid? LateJoinTicketId { get; set; }
 

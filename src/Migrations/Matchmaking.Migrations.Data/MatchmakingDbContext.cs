@@ -19,6 +19,8 @@ public class MatchmakingDbContext : DbContext
 
     public DbSet<MatchReservation> Reservations { get; set; }
 
+    public DbSet<IntermediateLobby> IntermediateLobbies { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         SetupPlatformGroupTable(modelBuilder);
@@ -30,8 +32,21 @@ public class MatchmakingDbContext : DbContext
         SetupPlaylistsAndScenarios(modelBuilder);
         
         SetupMatchReservations(modelBuilder);
+        
+        SetupIntemediteLobby(modelBuilder);
 
         base.OnModelCreating(modelBuilder);
+    }
+
+    private static void SetupIntemediteLobby(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<IntermediateLobby>()
+            .HasKey(x => x.Id);
+
+        modelBuilder.Entity<IntermediateLobby>()
+            .HasOne(l => l.Group)
+            .WithMany()
+            .HasForeignKey(l => l.PlatformGroupId);
     }
 
     private static void SetupMatchReservations(ModelBuilder modelBuilder)
