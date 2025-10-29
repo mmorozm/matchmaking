@@ -19,7 +19,7 @@ public class MatchmakingDbContext : DbContext
 
     public DbSet<MatchReservation> Reservations { get; set; }
 
-    public DbSet<IntermediateLobby> IntermediateLobbies { get; set; }
+    public DbSet<IntermediateLobby> IntermediateLobby { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
