@@ -5,7 +5,7 @@ public class FindMatchRequest
     public string PlayerId { get; set; }
     public ICollection<string> Party { get; set; }
     public Guid LateJoinTicketId { get; set; }
-    public ICollection<Guid> RegionIds { get; set; }
+    public ICollection<int> RegionIds { get; set; }
     public ICollection<Guid> PlaylistIds { get; set; }
 
     public InputDeviceRequest PreferredInput { get; set; }
@@ -17,7 +17,7 @@ public class FindMatchRequest
     public FindMatchRequest()
     {
         Party = new List<string>();
-        RegionIds = new List<Guid>();
+        RegionIds = new List<int>();
         PlaylistIds = new List<Guid>();
     }
 }
