@@ -1,4 +1,7 @@
+using System.Reflection;
 using Matchmaking.Migrations.Data;
+using Matchmaking.Models.Services.Extensions;
+using Matchmaking.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,10 +15,31 @@ builder.Services.AddDbContext<MatchmakingDbContext>(options =>
             sqlOptions.MigrationsAssembly("Matchmaking.Migrations.Data"); // Specify the migrations assembly
         }));
 
+builder.Services.AddMappers(Assembly.GetExecutingAssembly());
+builder.Services.AddMatchmakingRepositories();
+builder.Services.AddHealthChecks();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Configure Swagger/OpenAPI
+var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "Matchmaking API",
+        Version = "v1",
+        Description = "API for matchmaking services"
+    });
+
+    if (File.Exists(xmlPath))
+    {
+        options.IncludeXmlComments(xmlPath);
+    }
+});
+
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -33,6 +57,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMatchmakingHealthChecks();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

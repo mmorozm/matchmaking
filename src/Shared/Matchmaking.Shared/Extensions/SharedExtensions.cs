@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Matchmaking.Shared;
+namespace Matchmaking.Shared.Extensions;
 
 public static class SharedExtensions
 {
@@ -28,7 +28,7 @@ public static class SharedExtensions
         return services;
     }
 
-    public static IApplicationBuilder UseHealthChecks(this IApplicationBuilder app)
+    public static IApplicationBuilder UseMatchmakingHealthChecks(this IApplicationBuilder app)
     {
         return app.UseHealthChecks("/health", new HealthCheckOptions());
     }
