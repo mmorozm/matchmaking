@@ -17,6 +17,7 @@ builder.Services.AddDbContext<MatchmakingDbContext>(options =>
 
 builder.Services.AddMappers(Assembly.GetExecutingAssembly());
 builder.Services.AddMatchmakingRepositories();
+builder.Services.AddMatchmakingServices();
 builder.Services.AddHealthChecks();
 builder.Services.AddControllers();
 

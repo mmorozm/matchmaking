@@ -33,12 +33,12 @@ public class MatchmakingDbContext : DbContext
         
         SetupMatchReservations(modelBuilder);
         
-        SetupIntemediteLobby(modelBuilder);
+        SetupIntermediteLobby(modelBuilder);
 
         base.OnModelCreating(modelBuilder);
     }
 
-    private static void SetupIntemediteLobby(ModelBuilder modelBuilder)
+    private static void SetupIntermediteLobby(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<IntermediateLobby>()
             .HasKey(x => x.Id);
